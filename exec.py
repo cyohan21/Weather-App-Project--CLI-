@@ -1,4 +1,4 @@
-class WeatherDatabase: # Change name to database as the app will be a new class.
+class WeatherDatabase:
     weather_dict = {
         'Ottawa': {'Temperature': '12*C', 'Air Quality Index': 4, 'Humidity': '80%'},
         'Montreal':{'Temperature': '15*C', 'Air Quality Index': 3, 'Humidity': '70%'},
