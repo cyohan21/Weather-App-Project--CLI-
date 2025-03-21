@@ -13,9 +13,9 @@ class WeatherDatabase: # Change name to database as the app will be a new class.
 
     @classmethod
     def view_city(cls, city):
-        temperature = cls.weather_dict[city]['Temperature'] # when adding extra strings to a value, you have to access the value before.
+        temperature = cls.weather_dict[city]['Temperature']
         print(f"City: {city}")
-        print(f"Temperature: {temperature}*C")  # value accessed, strings added.
+        print(f"Temperature: {temperature}*C")
         print(f"Air Quality Index: {cls.weather_dict[city]['Air Quality Index']}")
         print(f"Humidity: {cls.weather_dict[city]['Humidity']}")
 
@@ -23,8 +23,8 @@ class WeatherDatabase: # Change name to database as the app will be a new class.
     def add_city(cls, city, temperature, aqi, humidity):
         cls.weather_dict[city] = {'Temperature': temperature, 'Air Quality Index': aqi, 'Humidity': humidity}
 
-class WeatherApp: # Make a new class for the main applicaiton loop.
-    def run(self): # Put the entire main appplication Loop in the function
+class WeatherApp:
+    def run(self):
         while True:
             welcome_input = get_valid_input("""Welcome to the Weather App! Please enter one of the following:
         1: View City
@@ -43,11 +43,11 @@ class WeatherApp: # Make a new class for the main applicaiton loop.
                  print('Goodbye!')
                  break
 
-    def view_all_cities(self): # Added new functionality: View all cities.
+    def view_all_cities(self):
          print(WeatherDatabase.weather_dict)
 
 
-    def view_city_input(self): # turning each functionality into its own method within the class.
+    def view_city_input(self):
                 while True:
                     city = input('What city would you like to view?')
                     city = city.title()
@@ -90,4 +90,4 @@ def get_valid_input(prompt, valid_responses, exit_avail=True):
             print("I didn't get that, please try again.")
 
 app = WeatherApp()
-app.run() # calling the method within the class
+app.run()
